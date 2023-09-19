@@ -21,8 +21,8 @@ for element in soup.find('table').find('tbody').find_all('tr'):
     dictionary.append(dict(zip(key, value)))
 
 
-print(key)
-print(value)
-print(dictionary)
+print(key) # ['이름', '나이']
+print(value) # ['이몽룡', '34', '홍길동', '23']
+print(dictionary) # [{'이름': '이몽룡', '나이': '34'}, {'이름': '이몽룡', '나이': '34'}]
 
 
