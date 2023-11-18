@@ -30,3 +30,18 @@ def print_kwargs(**kwargs):
 print_kwargs(name='Aronamj', city='Seoul', school='Yonsei')
 # {'name': 'Aronamj', 'city': 'Seoul', 'school': 'Yonsei'}
 
+# 매개변수에 초기값 미리 설정하기
+def myself(name, city, woman=True):
+    print('내 이름은 %s이다.' % name)
+    print('내가 사는 도시는 %s이다.' % city)
+    if woman:
+        print('여성입니다.')
+    else:
+        print('남성입니다.')
+
+myself('Aronamj', 'Seoul')
+"""
+내 이름은 Aronamj이다.
+내가 사는 도시는 Seoul이다.
+여성입니다.
+"""
