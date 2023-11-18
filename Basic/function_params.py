@@ -22,5 +22,11 @@ def add_many(options, *args):
 print(add_many('A', 1, 2, 3, 4, 5)) # 15
 print(add_many('B', 1, 2, 3, 4, 5)) # 120
 
+# 키워드 매개변수
+def print_kwargs(**kwargs):
+    print(kwargs)
 
+# key=value 형태로 입력하면, 딕셔너리 형태로 저장된다.
+print_kwargs(name='Aronamj', city='Seoul', school='Yonsei')
+# {'name': 'Aronamj', 'city': 'Seoul', 'school': 'Yonsei'}
 
