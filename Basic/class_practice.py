@@ -33,10 +33,10 @@ a = MyCalculator()
 b = MyCalculator()
 
 a.set_nums(3, 5)
-a.add() # 8
+print(a.add()) # 8
 
 b.set_nums(2, 8)
-b.sub() # -6
+print(b.sub()) # -6
 
 # 입력받을 매개변수의 개수를 알 수 없을 때: *args 가변인수 사용
 class ManyCalculator:
@@ -65,4 +65,28 @@ class ManyCalculator:
 
 a = ManyCalculator()
 a.set_nums(1, 2, 3, 4, 5, 6, 7, 8)
-a.add() # 36
+print(a.add()) # 36
+
+# 클래스의 상속
+class NewCalculator(MyCalculator):
+    pass
+
+c = NewCalculator()
+c.set_nums(4, 5)
+print(c.add()) # 9
+
+import math
+class NewCalculator(MyCalculator):
+    def mix(self):
+        result = self.first + self.second
+        root_result = math.sqrt(result)
+        final_result = round(root_result, 4)
+        return final_result
+
+d = NewCalculator()
+d.set_nums(5, 8)
+print(d.mix()) # 3.6056
+
+
+
+        
