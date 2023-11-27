@@ -51,5 +51,4 @@ try:
     f = open("no", 'r')
 except FileNotFoundError:
     pass
-
     
