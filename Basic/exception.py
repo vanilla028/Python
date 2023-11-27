@@ -45,4 +45,11 @@ except ZeroDivisionError as e:
 else: # 오류가 없을 경우에만 수행
     print("더하기를 수행합니다. 값은: {}" .format(a+b))
 
+
+# 오류 회피하기
+try:
+    f = open("no", 'r')
+except FileNotFoundError:
+    pass
+
     
