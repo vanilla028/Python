@@ -28,4 +28,17 @@ import math
 # print(math.gcd(60, 100, 80)) # 20
 
 import random
+# 난수(임의의 수) 생성
+
+# 0.0~1.0 사이
+print(random.random()) # 0.5453855289805055
+
+# 1~10 사이
+print(random.randint(1, 10)) # 9
+
+# 입력 받은 리스트에서 무작위 선택하여 반환
+print(random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) # 4
+
+
+
 
