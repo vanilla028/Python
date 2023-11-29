@@ -1,12 +1,31 @@
-import itertools
-
 # 순열
+from itertools import permutations
+result = list(permutations(['a', 'b', 'c'], 2))
+print(result)
+# [('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'c'), ('c', 'a'), ('c', 'b')]
+import itertools
+result = list(itertools.permutations(['a', 'b', 'c'], 2))
+print(result)
 
 # 조합
+from itertools import combinations
+result = list(combinations(['a', 'b', 'c'], 2))
+print(result)
+# [('a', 'b'), ('a', 'c'), ('b', 'c')]
+import itertools
+result = list(combinations(['a', 'b', 'c'], 2))
+print(result)
 
 # 긴 객체에 맞춰 fillvalue 채우기
+import itertools
+friends = ['민아', '예솔', '성인', '민정', '수진']
+foods = ['피자', '치킨', '떡']
+result = itertools.zip_longest(friends, foods, fillvalue='파스타')
+print(list(result))
+# [('민아', '피자'), ('예솔', '치킨'), ('성인', '떡'), ('민정', '파스타'), ('수진', '파스타')]
 
 # 객체를 하나의 값으로 줄이기
+import functools
 
 # 최댓값 구하기
 
@@ -50,6 +69,8 @@ import json
 
 import urllib.request
 # URL 읽고 분석할 때 사용하는 모듈
+
+import webbrowser
 
 
 
