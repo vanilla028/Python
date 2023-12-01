@@ -80,31 +80,60 @@ import os
 
 
 # 환경 변숫값 확인하기
+import os
+print(os.environ)
 
 # 디렉토리 위치 변경하기
+# os.chdir()
 
-# 디렉터리 위치 반환하기
+# 디렉토리 위치 반환하기
+# os.getcwd()
 
 # 시스템 명령어 호출하기
+# os.system()
 
 # 시스템 명령어 반환하기
+# os.popen()
 
 # 여러 개의 파일을 zip 형식으로 병합 또는 해제하기
+import zipfile
 
-import time
+# 압축할 파일을 만든다
+f = open("hello.txt", 'w')
+data = "안녕하세요."
+f.write(data)
+f.close()
+
+f = open("morning.txt", 'w')
+data = "좋은 아침이에요."
+f.write(data)
+f.close()
+
+with zipfile.ZipFile('zip_test.zip', 'w') as zip:
+    zip.write('hello.txt')
+    zip.write('morning.txt')
+
+# with zipfile.ZipFile('zip_test.zip', 'w') as zip:
+#     zip.extractall()
+
+
+
 # 스레딩
+import time
 
-import tempfile
 # 파일을 임시로 만들어서 사용할 때 유용한 모듈
+import tempfile
 
 # traceback
+import traceback
 
-import json
 # JSON 파일 읽고 쓰기
+import json
 
-import urllib.request
 # URL 읽고 분석할 때 사용하는 모듈
+import urllib.request
 
+# 시스템 브라우저 호출 시 사용하는 모듈
 import webbrowser
 
 
