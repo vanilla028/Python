@@ -24,25 +24,60 @@ result = itertools.zip_longest(friends, foods, fillvalue='파스타')
 print(list(result))
 # [('민아', '피자'), ('예솔', '치킨'), ('성인', '떡'), ('민정', '파스타'), ('수진', '파스타')]
 
-# 객체를 하나의 값으로 줄이기
+# functools.reduce로 객체를 하나의 값으로 줄이기
 import functools
+data = [1, 2, 3, 4, 5, 6, 7, 8, 10]
+result = functools.reduce(lambda x, y: x + y, data)
+print(result) # 46
 
-# 최댓값 구하기
+# functools.reduce로 최댓값 구하기
+data = [1, 3, 5, 7, 9]
+result = functools.reduce(lambda x, y: x if x > y else y, data)
+print(result) # 9
 
 # 다양한 기준으로 정렬하기
+from operator import itemgetter
+info = [('민정', 99.8), ('수진', 89), ('은우', 95)]
+result = sorted(info, key=itemgetter(1), reverse=True)
+print(result)
+# [('민정', 99.8), ('은우', 95), ('수진', 89)]
+# 참고: 클래스의 객체인 경우 operator.attrgetter() 사용
 
-
-import shutil
 # 파일을 복사(copy)하거나 이동(move)하기
+import shutil
+shutil.copy("C:/Users/해피마미/connected_github/Python/Basic/library.py", 
+            "C:/Users/해피마미/connected_github/Python/Basic/library.py.bak")
 
+shutil.move("C:/Users/해피마미/connected_github/Python/Basic/library.py.bak",
+         "c:/temp/library.py.bak")
+
+
+# 디렉토리에 있는 파일들을 리스트로 만들기
 import glob
-# 디렉터리에 있는 파일들을 리스트로 만들기
+path = "C:/Users/해피마미/connected_github/Python/Basic/*"
+files = glob.glob(path)
+print(files)
+"""
+['C:/Users/해피마미/connected_github/Python/Basic\\01.Print.ipynb', 
+'C:/Users/해피마미/connected_github/Python/Basic\\02.Input.ipynb',
+...
+"""
 
-import pickle
 # 객체를 파일에 저장하고 로드하기
+import pickle
+f = open("pk_test.txt", 'wb') # 바이너리 형식
+data = {1: '강아지', 2: '고양이', 3: '햄스터', 4: '토끼', 5: '고릴라'}
+pickle.dump(data, f)
+f.close()
 
-import os
+f = open("pk_test.txt", 'rb')
+data = pickle.load(f)
+print(data)
+# {1: '강아지', 2: '고양이', 3: '햄스터', 4: '토끼', 5: '고릴라'}{1: '강아지', 2: '고양이', 3: '햄스터', 4: '토끼', 5: '고릴라'}
+
 # 환경 변수, 디렉토리, 파일 등의 OS 자원을 제어하는 모듈
+import os
+
 
 # 환경 변숫값 확인하기
 
