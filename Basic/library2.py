@@ -118,23 +118,7 @@ with zipfile.ZipFile('zip_test.zip', 'w') as zip:
 
 
 
-# 스레딩
-import time
 
-# 파일을 임시로 만들어서 사용할 때 유용한 모듈
-import tempfile
-
-# traceback
-import traceback
-
-# JSON 파일 읽고 쓰기
-import json
-
-# URL 읽고 분석할 때 사용하는 모듈
-import urllib.request
-
-# 시스템 브라우저 호출 시 사용하는 모듈
-import webbrowser
 
 
 
