@@ -1,7 +1,6 @@
 from PIL import Image
 import os
 
-
 img = Image.open("C:/Users/happysis/Documents/카카오톡 받은 파일/b.png")
 
 img_resize = img.resize((128, 128))
